@@ -1,12 +1,10 @@
 #include "main.h"
-
 /**
  * my_printf - Function that print string
  * @format: First argument passed
  * Return: Number of character printed
  */
-
-int my_printf(const char * const format, ...)
+int _printf(const char *format, ...)
 {
 	unsigned int i = 0;
 	unsigned int re_val = 0;
