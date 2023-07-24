@@ -16,7 +16,7 @@ int put_int(int x)
 	n = x / 10;
 	re_val += 1;
 	put_int(n);
-	myputchar(x % 10 + '0');
+	my_putchar(x % 10 + '0');
 
 	return (re_val);
 }
