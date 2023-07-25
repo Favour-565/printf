@@ -12,7 +12,10 @@ int put_int(int x)
 	int re_val = 0;
 
 	if (x == 0)
-		return (0);
+	{
+		my_putchar('0');
+		return (1);
+	}
 	if (x < 0)
 	{
 		my_putchar('-');
