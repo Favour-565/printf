@@ -17,7 +17,7 @@ int put_int(int x)
 	{
 		my_putchar('-');
 		re_val++;
-		x = -(long)x;
+		x = -x;
 	}
 	n = x / 10;
 	re_val += 1;
