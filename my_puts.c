@@ -21,6 +21,5 @@ int myPuts(char *str)
 			i++;
 		}
 	}
-	my_putchar('\n');
 	return (re_val);
 }

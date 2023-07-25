@@ -12,14 +12,16 @@ int put_str(char *str)
 	int i = 0;
 	int re_val = 0;
 
-	if (str)
+	if (str == NULL)
 	{
-		while (str[i] != '\0')
+		myPuts("(null)");
+		return (6);
+	}
+	while (str[i] != '\0')
 		{
 			my_putchar(str[i]);
 			re_val += 1;
 			i++;
 		}
-	}
 	return (re_val);
 }

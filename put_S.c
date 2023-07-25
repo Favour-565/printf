@@ -25,7 +25,7 @@ int put_S(char *c)
 				my_putchar('x');
 				my_putchar("0123456789ABCDEF"[c[x] / 16]);
 				my_putchar("0123456789ABCDEF"[c[x] % 16]);
-				re_val += 3;
+				re_val += 4;
 			}
 			re_val++;
 			x++;
