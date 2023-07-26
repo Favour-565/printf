@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts_S - Print sentence
+ * put_S - Print sentence
  * @c: Characters passed
  * Return: Printed character
  */
@@ -13,7 +13,7 @@ int put_S(char *c)
 
 	if (c)
 	{
-		while(c[x] != '\0')
+		while (c[x] != '\0')
 		{
 			if (c[x] >= 32 && c[x] <= 126)
 			{

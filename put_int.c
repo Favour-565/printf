@@ -8,28 +8,31 @@
  */
 int n_int(int n)
 {
-	int negC = 0, flag;
+	int negC = 0;
 	unsigned int i;
+	int digitCount = 0;
 
-	if (n > -10 && n < 10)
-		flag = 0;
-	if (n >= 0)
-		i = n;
-	else
+	if (n < 0)
 	{
-		n = -1 * (unsigned int)(n + 1) + 1;
-		n = -1;
 		negC = 1;
 	}
-	if (i / 10)
+	else
 	{
-		flag = 1;
-		return (1 + n_int(i / 10) + negC);
+		i = n;
 	}
-
-	if (flag == 0)
-		return (negC + 1);
-	return (1);
+	if (i == 0)
+	{
+		digitCount = 1;
+	}
+	else
+	{
+		while (i != 0)
+		{
+			i /= 10;
+			digitCount++;
+		}
+	}
+	return (negC + digitCount);
 }
 
 /**
@@ -39,33 +42,23 @@ int n_int(int n)
  */
 int int_print(int n)
 {
-	unsigned int i;
+	int len = 0;
 
+	if (n == INT_MIN)
+	{
+		len += put_str("-2147483648");
+		return (len);
+	}
 	if (n < 0)
 	{
-		i = -1 * (unsigned int)(n + 1) + 1;
-		n = -1;
-		my_putchar('-');
-	}
-	else
-	{
-		i = n;
+		n = -n;
+		len += my_putchar('-');
 	}
 
-	if (i / 10)
-		int_print(i / 10);
+	if (n / 10)
+		len += int_print(n / 10);
 
-	my_putchar(i % 10 + '0');
-	return (0);
+	my_putchar(n % 10 + '0');
+	len++;
+	return (len);
 }
-/**
- * put_int - function to print integer and return num of byte printed
- * @n: Integer passed
- * Return: Number of byte printed
- */
-int put_int(int n)
-{
-	int_print(n);
-	return (n_int(n));
-}
-

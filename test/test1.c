@@ -2,7 +2,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <limits.h>
-
+#include <stdlib.h>
 int main(void)
 {
 	int my_INT_MAX;
@@ -10,6 +10,18 @@ int main(void)
 
     my_INT_MAX = INT_MAX;
     my_INT_MIN = INT_MIN;
+	int len;
+       int len2;	
+
+       len = _printf("%d", 1024);
+        len2 = printf("%d", 1024);
+        fflush(stdout);
+        if (len != len2)
+        {
+                printf("Lengths differ.\n");
+                fflush(stdout);
+                return (1);
+        }
 
 	printf("%d\n", 65176);
         _printf("%d\n", 65176);
@@ -39,5 +51,6 @@ int main(void)
         printf("Minimum value of int: %i\n", my_INT_MIN);
         _printf("Minimum value of int: %i\n", my_INT_MIN);
 
+	
 	return (0);
 }

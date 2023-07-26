@@ -18,10 +18,10 @@ int put_str(char *str)
 		return (6);
 	}
 	while (str[i] != '\0')
-		{
-			my_putchar(str[i]);
-			re_val += 1;
-			i++;
-		}
+	{
+		my_putchar(str[i]);
+		re_val += 1;
+		i++;
+	}
 	return (re_val);
 }
