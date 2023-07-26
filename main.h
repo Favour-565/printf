@@ -10,9 +10,10 @@ int puts_S(int c);
 int put_S(char *c);
 int put_str(char *str);
 int myPuts(char *str);
-int put_int(int x);
+int put_int(int n);
 int _printf(const char *format, ...);
-
+int n_int(int n);
+int int_print(int n);
 
 
 #endif
