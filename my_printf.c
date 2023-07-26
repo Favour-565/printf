@@ -16,7 +16,7 @@ int spec_check(char n, va_list arg_list)
 		case 's':
 			return (put_str(va_arg(arg_list, char *)));
 		case '%':
-			return (my_putchar(va_arg(arg_list, int)));
+			return (my_putchar(n));
 		case 'd':
 			return (int_print(va_arg(arg_list, int)));
 		case 'i':
