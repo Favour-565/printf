@@ -13,6 +13,7 @@ int myPuts(char *str);
 int _printf(const char *format, ...);
 int n_int(int n);
 int int_print(int n);
+int spec_check(char n, va_list arg_list);
 
 
 #endif

@@ -14,15 +14,15 @@ int spec_check(char n, va_list arg_list)
 		case 'c':
 			return (my_putchar(va_arg(arg_list, int)));
 		case 's':
-			return (my_putchar(va_arg(arg_list, char *)));
+			return (put_str(va_arg(arg_list, char *)));
 		case '%':
 			return (my_putchar(va_arg(arg_list, int)));
 		case 'd':
-			return (int_print(va_arg(args_list, int)));
+			return (int_print(va_arg(arg_list, int)));
 		case 'i':
-			return (int_print(va_arg(args_list, int)));
+			return (int_print(va_arg(arg_list, int)));
 		case 'S':
-			return (put_S(va_arg(args_list, char *)));
+			return (put_S(va_arg(arg_list, char *)));
 		default:
 			return (my_putchar('%') + my_putchar(n));
 	}
@@ -49,10 +49,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
 		if (format[i] == '%')
-			re_val += speck_check(format[++i], args_list);
+			re_val += spec_check(format[++i], args_list);
 		else
 		{
-			my_putchar(va_arg(arg_list, int));
+			my_putchar(format[i]);
 			re_val += 1;
 		}
 	}
